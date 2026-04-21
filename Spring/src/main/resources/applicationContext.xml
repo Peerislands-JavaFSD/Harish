@@ -1,0 +1,24 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="calculator" class="org.example.XMLBased.IncomeTaxCalculator"></bean>
+    <bean id="bonusScheme" class="org.example.XMLBased.PerformanceBonus"></bean>
+
+    <bean id="payRollProcessor" class="org.example.XMLBased.PayrollProcessor">
+        <constructor-arg ref="calculator"></constructor-arg>
+        <constructor-arg value="TechCorp Solution"></constructor-arg>
+        <constructor-arg value="2026"></constructor-arg>
+
+        <property name="bonusScheme" ref="bonusScheme"></property>
+    </bean>
+
+<!--    <bean id="notificationManager" class="org.revature.NotificationManager">-->
+<!--        &lt;!&ndash;        <constructor-arg ref="messageService"></constructor-arg>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <constructor-arg value="Arul"> </constructor-arg>&ndash;&gt;-->
+<!--        <property name="senderName" value="Arul"></property>-->
+<!--        <property name="messageService" ref="messageService"></property>-->
+<!--    </bean>-->
+
+</beans>
